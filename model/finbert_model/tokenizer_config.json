@@ -1,0 +1,58 @@
+{
+  "name_or_path": "yiyanghkust/finbert-tone",
+  "vocab_size": 30873,
+  "model_max_length": "1000000000000000019884624838656",
+  "is_fast": false,
+  "padding_side": "right",
+  "truncation_side": "right",
+  "special_tokens": {
+    "unk_token": "[UNK]",
+    "sep_token": "[SEP]",
+    "pad_token": "[PAD]",
+    "cls_token": "[CLS]",
+    "mask_token": "[MASK]"
+  },
+  "clean_up_tokenization_spaces": true,
+  "added_tokens_decoder": {
+    "0": {
+      "content": "[PAD]",
+      "rstrip": false,
+      "lstrip": false,
+      "single_word": false,
+      "normalized": false,
+      "special": true
+    },
+    "2": {
+      "content": "[UNK]",
+      "rstrip": false,
+      "lstrip": false,
+      "single_word": false,
+      "normalized": false,
+      "special": true
+    },
+    "3": {
+      "content": "[CLS]",
+      "rstrip": false,
+      "lstrip": false,
+      "single_word": false,
+      "normalized": false,
+      "special": true
+    },
+    "4": {
+      "content": "[SEP]",
+      "rstrip": false,
+      "lstrip": false,
+      "single_word": false,
+      "normalized": false,
+      "special": true
+    },
+    "5": {
+      "content": "[MASK]",
+      "rstrip": false,
+      "lstrip": false,
+      "single_word": false,
+      "normalized": false,
+      "special": true
+    }
+  }
+}
