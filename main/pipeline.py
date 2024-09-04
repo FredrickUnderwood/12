@@ -90,8 +90,7 @@ def get_model(model_type, stock_name):
 
 
 if __name__ == "__main__":
-    stock_names = ['C', 'CSCO', 'DWDP', 'GM', 'HPQ', 'IBM', 'INTC', 'JPM', 'KFT', 'KO', 'MCD',
-                   'MMM', 'NKE', 'PGP', 'RTX', 'T', 'VZ']
+    stock_names = ['AXP', 'T', 'VZ']
     test_round = "0"
     model_type_1 = "informer"
     model_type_2 = "lstm"
@@ -111,12 +110,13 @@ if __name__ == "__main__":
         df = pd.read_csv(raw_data_path)
         split_date = df.iloc[int(train_ratio * len(df)), 0]
 
+        start_step = 0
 
         init_time = time.time()
-        infomer_model = get_model("informer", stock_name)
-        infomer_model.train(setting=informer_store_flag)
-        infomer_model.test(setting=informer_store_flag)
-        infomer_model.eval(setting=informer_store_flag)
+        informer_model = get_model("informer", stock_name)
+        informer_model.train(setting=informer_store_flag)
+        informer_model.test(setting=informer_store_flag)
+        informer_model.eval(setting=informer_store_flag)
         torch.cuda.empty_cache()
         print(f"It costs {time.time() - init_time} seconds to finish {informer_store_flag}.")
 
@@ -140,6 +140,7 @@ if __name__ == "__main__":
         concat_model.evaluation(informer_store_flag=informer_store_flag, lstm_store_flag=lstm_store_flag, finbert_store_flag=finbert_store_flag, concat_store_flag=concat_store_flag, stock_name=stock_name)
         torch.cuda.empty_cache()
         print(f"It costs {time.time() - init_time} seconds to finish {concat_store_flag}.")
+
 
 
     # Test
